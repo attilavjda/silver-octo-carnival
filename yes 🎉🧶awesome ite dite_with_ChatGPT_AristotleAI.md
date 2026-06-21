@@ -1161,3 +1161,42 @@ What you've rediscovered is the positive/negative
 			) is the standard grouping
 				
 				 — those are exactly the invertible rules.
+
+
+
+
+
+
+>
+>
+>
+>\>
+>
+
+
+
+
+
+	The dite story makes the polarity even cleaner,   
+	worth mentioning:   
+	
+		dite_prop_iff_and uses 
+			
+				∀ ((∀ h, Q h) ∧ (∀ h, R h))
+					 — negative — while 
+					 
+		dite_prop_iff_or uses 
+		
+				∃ ((∃ p, Q p) ∨ (∃ p, R p)) 
+					— positive. 
+					
+			Same dichotomy, so yes, doing @[simp] 
+			on ite_prop_iff_and 
+			and dite_prop_iff_and together 
+				is the consistent choice, 
+				and leaving the _or versions un-tagged 
+					
+					(handy for consuming a hypothesis 
+						via rcases (ite_prop_iff_or.mp h)) 
+							is right.
+					
