@@ -1,5 +1,14 @@
-
-
+*reference: copy pasted from Aristotle AI Harmonic and ChatGPT and edited / curated by Attila Vajda*
+>
+>
+>
+>>
+>
+>
+>>
+>
+>
+>
 🌳
 
 **\_and to prove it, \_or to use it**  
