@@ -2,9 +2,9 @@
 
 🌳
 
-**\_and to prove it, \_or to use it**
-*goal position vs hyp pos*
- "put each form where every rule firing is invertible."
+**\_and to prove it, \_or to use it**  
+*goal position vs hyp pos*  
+ "put each form where every rule firing is invertible."  
 
 
 *to prove:*
@@ -15,8 +15,8 @@ rewriting to
 ```lean
 ⊢ (P → Q) ∧ (¬P → R)
 ```
-is great: 
-	`constructor`; then assume `P` or `¬P`.
+is great:   
+	`constructor`; then assume `P` or `¬P`.  
 
 
 
