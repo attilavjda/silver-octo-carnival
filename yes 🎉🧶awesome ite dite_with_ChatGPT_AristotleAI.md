@@ -6,7 +6,10 @@
 *goal position vs hyp pos*  
  "put each form where every rule firing is invertible."  
 
-
+>
+>
+>
+>
 *to prove:*
 ```lean
 ⊢ if P then Q else R
@@ -18,7 +21,10 @@ rewriting to
 is great:   
 	`constructor`; then assume `P` or `¬P`.  
 
-
+>
+>
+>
+>
 
 *to use:*
 ```lean
@@ -28,7 +34,10 @@ rewriting `h` to
 ```lean
 h : (P ∧ Q) ∨ (¬P ∧ R)
 ```
-
+>
+>
+>
+>
 
 `cases h` gives branch condition 
 	and result together.
@@ -38,7 +47,13 @@ h : (P ∧ Q) ∨ (¬P ∧ R)
 * hypothesis/use ⇒ `_or` is ergonomic
 
 
-
+>
+>
+>
+>>
+>
+>
+>
 
 right-rules for ∧ are invertible;  
 left-rules for ∨ are informative. 🐚  
@@ -46,7 +61,13 @@ left-rules for ∨ are informative. 🐚
 
 <div class="spacer"><br></div>
 
-
+>
+>
+>
+>>
+>
+>
+>
 
 🌊flow is:
 
@@ -59,7 +80,13 @@ goal: (P→Q) ∧ (¬P→R)
 
 <div class="spacer"><br></div>
 
-
+>
+>
+>
+>>
+>
+>
+>
 
 
 key idea 🐚:
@@ -76,7 +103,13 @@ intro P / intro ¬P = move assumptions into context
 		
 		(like α-rules in tableaux).		
 
-
+>
+>
+>
+>>
+>
+>
+>
 
 \_or:  
 
@@ -113,7 +146,13 @@ goal: (P∧Q) ∨ (¬P∧R)
     constructor
       split again
 ```
-
+>
+>
+>
+>>
+>
+>
+>
 
 <div class="spacer"><br></div>
 🌳
@@ -147,7 +186,13 @@ goal: (P∧Q) ∨ (¬P∧R)
 
 <div class="spacer"><br></div>
 
-
+>
+>
+>
+>>
+>
+>
+>
 
 
 split shows up at use-time, in Rewrite.lean:   
@@ -170,7 +215,13 @@ when preprocess turns each ↔ into one Eq rewrite,
 the issue is not definition-time but use-time normalization.  
 
 
-
+>
+>
+>
+>>
+>
+>
+>
 
 implication between the two formulations:  
 
@@ -198,7 +249,13 @@ Let
 					No EM needed.
 
 
-
+>
+>
+>
+>>
+>
+>
+>
 
 	### `_and → _or` ✘ generally not constructive
 
@@ -235,14 +292,26 @@ case information  ⇒ instructions
 instructions      ⇒ case information   (needs EM)
 ```
 
-
+>
+>
+>
+>>
+>
+>
+>
 
 🐚 data ⇒ rules is easy.  
 
 		rules ⇒ data 
 			requires deciding which world you're in.
 
-
+>
+>
+>
+>>
+>
+>
+>
 
 
 the polarity is the same fact viewed three ways: 
@@ -256,7 +325,13 @@ the polarity is the same fact viewed three ways:
 			simp lives on the left column; 
 			rcases/by_cases live on the right. 🌳
 
-
+>
+>
+>
+>>
+>
+>
+>
 
 
 dite_prop_iff_or: 
@@ -274,7 +349,13 @@ dite_prop_iff_or:
 				Good for rcases, not for a normalizer.
 
 
-
+>
+>
+>
+>>
+>
+>
+>
 dite_prop_iff_and: 
 
 		dite P Q R ↔ (∀ h, Q h) ∧ (∀ h, R h). 
@@ -292,7 +373,13 @@ dite_prop_iff_and:
 				 simp can drive it deterministically.
 
 
-
+>
+>
+>
+>>
+>
+>
+>
 
 	 → ⇝ ∀ and ∧
 		  stay choiceless 
@@ -307,7 +394,13 @@ dite_prop_iff_and:
 			lifted to the dependent setting. 🌳
 
 
-
+>
+>
+>
+>>
+>
+>
+>
 
 
 in choosing whether to add`@[simp]` to \_and or \_or,  
@@ -315,7 +408,13 @@ the difference seems to be in how `simp` processes each
 
 and `simp`  
 
-
+>
+>
+>
+>>
+>
+>
+>
 
 	an ∨ goal forces you to pick a branch
 		—simp won't decide P for you,
@@ -331,7 +430,13 @@ and `simp`
 				rcases (ite_prop_iff_or.mp h).
 
 
-
+>
+>
+>
+>>
+>
+>
+>
 
 \_or is handy only for consuming an ite in a hypothesis.
 \_or form gives (P∧Q)∨(¬P∧R), 
@@ -341,7 +446,13 @@ and `simp`
 			you'd need rcases and a decision.
 
 
-
+>
+>
+>
+>>
+>
+>
+>
 
 — they're De Morgan duals as logic,   
 but simp is not symmetric in them,   
@@ -362,7 +473,13 @@ and needs a deterministic target.
 			
 			so the _and form is a good simp normal form.
 
-
+>
+>
+>
+>>
+>
+>
+>
 		
 		An ∨ on the RHS 
 			((P∧Q) ∨ (¬P∧R))
@@ -376,7 +493,13 @@ and needs a deterministic target.
 			
 			so the _or form is bad as a goal-rewrite.
 
-
+>
+>
+>
+>>
+>
+>
+>
 
 also, \_or → \_and is intuitionistic,  
 but _and → \_or needs Decidable P/excluded middle.  
@@ -385,7 +508,10 @@ but _and → \_or needs Decidable P/excluded middle.
 	not a mirror image; 
 	_and is the constructive floor.
 ```
-
+>
+>
+>
+>
 so: 
 
 		dual as propositions, 
@@ -397,14 +523,20 @@ so:
 				for consuming an ite in a hypothesis (rcases), 
 					not for goals.
 
-
+>
+>
+>
+>
 
 they are dual as propositions,   
 but asymmetric operationally,  
 because   
 
 
-
+>
+>
+>
+>
 
 
 
@@ -420,7 +552,13 @@ so use each form on the side
 		where all of its connectives have invertible rules.	
 
 
-
+>
+>
+>
+>>
+>
+>
+>
 
 the tableaux view predicts correctly: 
 	
@@ -438,7 +576,13 @@ the tableaux view predicts correctly:
 				 which is the third independent reason 
 					 it's the safe global normal form.
 
-
+>
+>
+>
+>>
+>
+>
+>
 Modern name for the dichotomy: 
 	
 		this is focusing / polarity (Andreoli). 
@@ -458,14 +602,20 @@ Modern name for the dichotomy:
 					_and is the negative packaging of ite, 
 					_or the positive one.
 
-
+>
+>
+>
+>
 
 ∧R = product of obligations  
 ∨L = coproduct of cases  
 
 This is exactly product vs coproduct in category theory.
 
-
+>
+>
+>
+>
 
 4. Tiny structural picture 🌳
 ```
@@ -481,7 +631,10 @@ h : A ∨ B
    ↓
 case A      case B
 ```
-
+>
+>
+>
+>
 
 6. Tableaux intuition 🐚  
 ∧R (goal) = no branching  
@@ -495,8 +648,18 @@ case A      case B
 			_or reveals cases; 
 			swapping them moves branching
 				 from “known” to “unknown”. 🌿
+>
+>
+>
+>
 
 
+
+
+>>
+>
+>
+>
 
 (negative/invertible packaging 
 		⇒ good goal normal form ⇒ constructive floor)
@@ -527,7 +690,10 @@ P → Q   ↦   ∀ h : P, Q h
 	prove Q hP   prove R hNP
 	(no tree growth)
 
-
+>
+>
+>
+>
 
 
 		h : dite P Q R
@@ -553,15 +719,24 @@ P → Q   ↦   ∀ h : P, Q h
       Q(P)           R(¬P)
 ```
 
-
+>
+>
+>
+>>
+>
+>
+>
 
 
 
  — here are all **4 in the same structural style** 🌳🐚
 
----
+>
+>
+>
+>
 
-# 1. `∧R` (goal: A ∧ B)
+ 1. `∧R` (goal: A ∧ B)
 
 ```text
 goal: A ∧ B
@@ -574,9 +749,12 @@ goal: A ∧ B
 
 (no branching, just two obligations)
 
----
+>
+>
+>
+>
 
-# 2. `∨L` (hyp: A ∨ B)
+2. `∨L` (hyp: A ∨ B)
 
 ```text
 h : A ∨ B
@@ -589,9 +767,11 @@ h : A ∨ B
 
 (branching analysis of given info)
 
----
-
-# 3. `ite` (non-dependent)
+>
+>
+>
+>
+ 3. `ite` (non-dependent)
 
 ```text
 ite P Q R
@@ -604,9 +784,12 @@ ite P Q R
 
 ⚠️ but: branches do NOT receive P / ¬P as usable data
 
----
+>
+>
+>
+>
 
-# 4. `dite` (dependent)
+ 4. `dite` (dependent)
 
 ```text
 dite P Q R
@@ -622,7 +805,10 @@ dite P Q R
 
 
 
-
+>
+>
+>
+>
 
 ---
 
@@ -635,7 +821,10 @@ dite P Q R
 | ite  | blind branching    | no dependency      |
 | dite | informed branching | dependency-aware   |
 
----
+>
+>
+>
+>
 
 
 
@@ -645,8 +834,11 @@ dite P Q R
 just with dependency added in the `dite` row. 🌳🐚    
 Here are the structural drawings in one unified style:  
 
----
 
+>
+>
+>
+>
 
 
 
@@ -665,7 +857,10 @@ Here are the structural drawings in one unified style:
 
 		∨R (choose left/right in goal)
 		∃R (choose witness)
-
+>
+>
+>
+>
 
 
 
@@ -688,7 +883,10 @@ Here are the structural drawings in one unified style:
 			it never has to guess.
 
 
-
+>
+>
+>
+>
 
 
 
