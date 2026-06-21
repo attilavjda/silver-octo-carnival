@@ -37,17 +37,17 @@ h : (P ∧ Q) ∨ (¬P ∧ R)
 * goal/prove ⇒ `_and` is ergonomic
 * hypothesis/use ⇒ `_or` is ergonomic
 
----
 
----
+
+
 right-rules for ∧ are invertible;  
 left-rules for ∨ are informative. 🐚  
---
 
 
 
 
----
+
+
 🌊flow is:
 
 ```
@@ -56,11 +56,11 @@ goal: (P→Q) ∧ (¬P→R)
     goal1: P→Q   → intro P
     goal2: ¬P→R  → intro ¬P
 ```
----
 
 
 
----
+
+
 
 key idea 🐚:
 
@@ -110,31 +110,31 @@ goal: (P∧Q) ∨ (¬P∧R)
 
 🌳
 
-* `_and` form: 
-	**no choice**, only decomposition
-* `_or` form: 
-	**must commit first**, then decompose
+* `_and` form:   
+	**no choice**, only decomposition  
+* `_or` form:   
+	**must commit first**, then decompose  
 
-this why `simp` prefers 
-	`_and` version: 
-		which avoids introducing 
-			a *search decision* too early.
+this why `simp` prefers   
+	`_and` version:   
+		which avoids introducing   
+			a *search decision* too early.  
 			
+  
+* `∧` = “I owe you both proofs”   
+	(parallel obligations)  
+* `∨` = “I claim one of two worlds is true”   
+	(must pick world first)  
 
-* `∧` = “I owe you both proofs” 
-	(parallel obligations)
-* `∨` = “I claim one of two worlds is true” 
-	(must pick world first)
+			in tableaux:		
 
-in tableaux:
+			* ∧ = α-rule 		
+				(no branching)		
+			* ∨ = β-rule 		
+				(branching search node)		
 
-* ∧ = α-rule 
-	(no branching)
-* ∨ = β-rule 
-	(branching search node)
-
-`_or` is inherently a **choice point**, 
-	not a pure structural flow. 🐙
+			`_or` is inherently a **choice point**, 		
+				not a pure structural flow. 🐙		
 
 
 
