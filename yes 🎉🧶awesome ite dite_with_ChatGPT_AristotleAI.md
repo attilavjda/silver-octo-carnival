@@ -1064,18 +1064,19 @@ it's not that simp forbids ∨ in a goal;
 it's that simp won't case-split a goal on its own,   
 so rewriting a goal to a disjunction typically leaves it stuck.   
 
-With \_and, after the rewrite each conjunct can be attacked independently, 
-and simp +contextual can even assume P (resp. ¬P) while simplifying Q (resp. R), 
+With \_and, after the rewrite each conjunct can be attacked independently,  
+and simp +contextual can even assume P (resp. ¬P) while simplifying Q (resp. R),   
+>
 	because → lets it move the hypothesis into context. 
-	
+>	
 	That's the concrete payoff.
 
 
 
-
-
-
-
+>
+>
+>
+>
 >
 
 
