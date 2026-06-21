@@ -1199,4 +1199,112 @@ What you've rediscovered is the positive/negative
 					(handy for consuming a hypothesis 
 						via rcases (ite_prop_iff_or.mp h)) 
 							is right.
+
+
+
+
+
+
+
+							
+.
+
+
+
+>
+The key idea is:  
+simp has a built-in bias toward   
+“decomposable structure in goal position.  " "
+
+
+
+.
+
+
+
+>
+product-of-implications fits simp
+
+	Shapes like: 
+		(P → Q) ∧ (¬P → R)
+
+	or
+		(∀ h, Q h) ∧ (∀ h, R h)
+
+	are:
+		product (∧) = splittable goal
+		implication / ∀ = invertible goal rules
+
+
+		So simp can do:
+
+			constructor
+			intro
+			intro
+
+			👉 no branching, no search
+
+				is exactly the α/negative phase 
+				of proof search.
+
+
+.
+
+
+
+
+
+
+
+
+		\_and aligns with this bias
+
+		`ite P Q R ↔ (P → Q) ∧ (¬P → R)`
+
+		fits perfectly because:
+
+		outer ∧ → splits goal cleanly
+		inner → → handled by intro
+		no disjunction anywhere in goal space
+
+		it stays inside:
+
+		product + implication
+			 = “structural normal form”
+
+
+.
+
+
+
+
+
+
+
+
+
+.
+
+
+
+	
+	
+	_or cuts against it
+	
+	ite P Q R ↔ (P ∧ Q) ∨ (¬P ∧ R)
+	
+	introduces:
+	
+	∨ in goal position after rewrite
+	
+	Now simp would need:
+	
+	left/right choice
+	
+	But simp is not a search procedure, so:
+	
+	it avoids committing to ∨R
+	or leaves it unexpanded
+	
+	So it breaks the deterministic flow.
 					
