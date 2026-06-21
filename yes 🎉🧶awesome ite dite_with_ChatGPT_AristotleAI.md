@@ -44,7 +44,7 @@ right-rules for ∧ are invertible;
 left-rules for ∨ are informative. 🐚  
 
 
-
+<div class="spacer"><br></div>
 
 
 
@@ -57,7 +57,7 @@ goal: (P→Q) ∧ (¬P→R)
     goal2: ¬P→R  → intro ¬P
 ```
 
-
+<div class="spacer"><br></div>
 
 
 
@@ -81,6 +81,8 @@ _or:
 you cannot use constructor, 
 ∵ there isn't a deterministic split
 
+
+<div class="spacer"><br></div>
 
 you have to choose a side:
 
@@ -108,6 +110,8 @@ goal: (P∧Q) ∨ (¬P∧R)
       split again
 ```
 
+
+<div class="spacer"><br></div>
 🌳
 
 * `_and` form:   
@@ -120,7 +124,8 @@ this why `simp` prefers
 		which avoids introducing   
 			a *search decision* too early.  
 			
-  
+  <div class="spacer"><br></div>
+
 * `∧` = “I owe you both proofs”   
 	(parallel obligations)  
 * `∨` = “I claim one of two worlds is true”   
@@ -136,7 +141,7 @@ this why `simp` prefers
 			`_or` is inherently a **choice point**, 		
 				not a pure structural flow. 🐙		
 
-
+<div class="spacer"><br></div>
 
 
 
