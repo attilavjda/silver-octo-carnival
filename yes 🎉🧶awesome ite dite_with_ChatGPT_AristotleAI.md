@@ -1206,7 +1206,7 @@ What you've rediscovered is the positive/negative
 
 
 
-							
+
 .
 
 
@@ -1288,23 +1288,51 @@ product-of-implications fits simp
 
 
 	
-	
-	_or cuts against it
-	
-	ite P Q R ↔ (P ∧ Q) ∨ (¬P ∧ R)
-	
-	introduces:
-	
-	∨ in goal position after rewrite
-	
-	Now simp would need:
-	
-	left/right choice
-	
-	But simp is not a search procedure, so:
-	
-	it avoids committing to ∨R
-	or leaves it unexpanded
-	
-	So it breaks the deterministic flow.
+		
+		_or cuts against it
+		
+		ite P Q R ↔ (P ∧ Q) ∨ (¬P ∧ R)
+		
+		introduces:
+		
+		∨ in goal position after rewrite
+		
+		Now simp would need:
+		
+		left/right choice
+		
+		But simp is not a search procedure, so:
+		
+		it avoids committing to ∨R
+		or leaves it unexpanded
+		
+		So it breaks the deterministic flow.
+						
+
+
+
+
+
+
+
+
 					
+	
+
+
+
+			this matches existing simp orientation
+			
+			the key pattern:
+			
+					forall_and
+					and_imp
+					dite_prop_iff_and
+			
+			All of these push goals into:
+			
+					∧ + ∀ + →
+			
+			This is exactly:
+			
+					“invertible right rules only”
