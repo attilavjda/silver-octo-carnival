@@ -37,12 +37,17 @@ h : (P ∧ Q) ∨ (¬P ∧ R)
 * goal/prove ⇒ `_and` is ergonomic
 * hypothesis/use ⇒ `_or` is ergonomic
 
+---
 
-right-rules for ∧ are invertible; 
-left-rules for ∨ are informative. 🐚
+---
+right-rules for ∧ are invertible;  
+left-rules for ∨ are informative. 🐚  
+--
 
 
 
+
+---
 🌊flow is:
 
 ```
@@ -51,8 +56,11 @@ goal: (P→Q) ∧ (¬P→R)
     goal1: P→Q   → intro P
     goal2: ¬P→R  → intro ¬P
 ```
+---
 
 
+
+---
 
 key idea 🐚:
 
