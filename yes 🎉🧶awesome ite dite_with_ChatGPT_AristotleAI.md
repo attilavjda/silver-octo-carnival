@@ -1018,3 +1018,145 @@ simp has no canonical normal form.
 		termination properties of 
 		the selected `@[simp]` rules.
 
+
+
+
+
+
+
+>
+
+simp has no canonical normal form. 
+	
+	Its output depends entirely
+	 on the active rewrite set 
+		
+		 (which @[simp] lemmas, 
+		 simp only [...], 
+		 priorities, 
+		 direction, 
+		 dischargers, 
+		 congruence rules). 
+		 
+	 It's a terminating-ish rewrite strategy: 
+	 repeatedly apply matching oriented rules bottom-up 
+	 until none fire. 
+	 
+		 Change the rule set and the "normal form" changes; 
+		 
+		 non-confluent sets can even give 
+			 order-dependent results. 
+		 
+		 So: a normal form relative to a chosen rewrite system, 
+	not an absolute canonical one.
+
+
+
+
+
+
+
+
+>
+
+
+it's not that simp forbids ∨ in a goal; 
+it's that simp won't case-split a goal on its own, 
+so rewriting a goal to a disjunction typically leaves it stuck. 
+
+With \_and, after the rewrite each conjunct can be attacked independently, 
+and simp +contextual can even assume P (resp. ¬P) while simplifying Q (resp. R), 
+	because → lets it move the hypothesis into context. 
+	
+	That's the concrete payoff.
+
+
+
+
+
+
+
+>
+
+
+	_or → _and is intuitionistically valid 
+	(in the ¬P∧R case you get Q from P/¬P ex falso, etc.), 
+	
+	while _and → _or needs to decide P, 
+	i.e. Decidable P/excluded middle. 
+	
+	So _or is strictly the stronger/more informative statement 
+	and _and is the constructive floor 
+	
+		— another independent reason @[simp] belongs on _and.
+
+
+
+
+
+
+
+>
+
+simp's asymmetry doesn't come from logic,   
+it comes from direction of use:    
+simp rewrites a target,    
+then tries to make progress on whatever it produced.   
+
+
+
+
+
+
+
+
+>
+it's polarity:
+
+		positive/negative 
+		asynchronous/synchronous
+
+The polarity framing you've reached is exactly the right one.   
+What you've rediscovered is the positive/negative   
+(a.k.a. asynchronous/synchronous) classification from focusing:  
+
+	
+    Negative / right-invertible connectives: 
+	    
+		    ∧, →, ∀ (and ⊤, ¬). 
+		    
+		    Decomposing them in the goal is information-preserving 
+		    and choice-free — ∧R splits, →R/∀R just introduce. 
+		    
+			    That's the _and form.
+
+
+    Positive / right-non-invertible connectives: 
+    
+		    ∨, ∃ (and ⊥). 
+		    
+		    Proving them in the goal requires a commitment 
+		    — ∨R picks a side, ∃R picks a witness. 
+		    
+			    That's the _or form.
+
+
+
+
+
+
+
+>
+
+	So "_and = simp doesn't have to guess" 
+		is precisely 
+		
+			"the _and RHS is built from negative connectives, 
+			which are right-invertible." 
+			
+			Your bullet list (
+				∧R,→R,∀R invertible on the right; 
+				∨L,∃L invertible on the left
+			) is the standard grouping
+				
+				 — those are exactly the invertible rules.
