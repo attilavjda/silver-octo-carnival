@@ -712,8 +712,10 @@ theorem dite_prop_iff_and {Q : P → Prop} {R : ¬P → Prop} :
 | **`dite`** | `(∃ p, Q p) ∨ (∃ p, R p)`      | `(∀ h, Q h) ∧ (∀ h, R h)`       |
 
 two axes of duality run through this table
-			— and understanding them *is* the
-				answer to the question.
+				— and understanding them *is* the  
+					answer to the question.  
+			
+
 		* **Rows (ite ↦ dite):** 
 				the non-dependent row 
 					is the *propositional shadow* of
