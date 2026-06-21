@@ -64,13 +64,17 @@ goal: (P→Q) ∧ (¬P→R)
 
 key idea 🐚:
 
-constructor = split conjunction into independent obligations
-intro P / intro ¬P = move assumptions into context
+constructor = split conjunction into independent obligations		
+intro P / intro ¬P = move assumptions into context		
 
-No branching yet; 
-just structural decomposition 
-of proof obligations 
-(like α-rules in tableaux).
+		
+		No branching yet; 		
+		
+		just structural decomposition 		
+		
+		of proof obligations 		
+		
+		(like α-rules in tableaux).		
 
 
 
@@ -119,10 +123,10 @@ goal: (P∧Q) ∨ (¬P∧R)
 * `_or` form:   
 	**must commit first**, then decompose  
 
-this why `simp` prefers   
-	`_and` version:   
-		which avoids introducing   
-			a *search decision* too early.  
+		this why `simp` prefers   
+			`_and` version:   
+				which avoids introducing   
+					a *search decision* too early.  
 			
   <div class="spacer"><br></div>
 
