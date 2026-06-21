@@ -1,4 +1,4 @@
-*reference: copy pasted from Aristotle AI Harmonic and ChatGPT and edited / curated by Attila Vajda*
+*reference: copy paste from Aristotle AI Harmonic and ChatGPT and edited / curated by Attila Vajda*
 >
 >
 >
