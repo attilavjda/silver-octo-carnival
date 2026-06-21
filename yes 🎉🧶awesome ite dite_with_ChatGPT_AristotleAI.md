@@ -742,3 +742,72 @@ two axes of duality run through this table
 								(negative, *universal*).
 							
 Everything else is a consequence of these two axes.
+
+>
+>
+>
+>
+
+simp has no canonical normal form. 
+	
+	Its output depends entirely
+	 on the active rewrite set 
+		
+		 (which @[simp] lemmas, 
+		 simp only [...], 
+		 priorities, 
+		 direction, 
+		 dischargers, 
+		 congruence rules). 
+		 
+	 It's a terminating-ish rewrite strategy: 
+	 repeatedly apply matching oriented rules bottom-up 
+	 until none fire. 
+	 
+		 Change the rule set and the "normal form" changes; 
+		 
+		 non-confluent sets can even give 
+			 order-dependent results. 
+		 
+		 So: a normal form relative to a chosen rewrite system, 
+	not an absolute canonical one.
+
+
+
+
+	>
+	>
+	>
+
+
+
+
+7. The key conceptual correction 🧠
+
+		Not:
+			simp produces canonical normal form
+
+		but:
+			simp produces a strategy-dependent 
+				normal form under a chosen rewrite system
+
+
+
+
+>
+>
+>
+
+
+
+		8. One-line essence 🌿
+
+		simp is a proof-carrying, 
+		bottom-up conditional 
+		rewrite engine whose 
+		notion of “normal form”
+		is determined entirely 
+		by the invertibility and 
+		termination properties of 
+		the selected `@[simp]` rules.
+
