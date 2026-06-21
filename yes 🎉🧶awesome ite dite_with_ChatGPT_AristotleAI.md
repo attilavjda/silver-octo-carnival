@@ -64,8 +64,8 @@ goal: (P→Q) ∧ (¬P→R)
 
 key idea 🐚:
 
-constructor = split conjunction into independent obligations  		
-intro P / intro ¬P = move assumptions into context  		
+constructor = split conjunction into independent obligations  
+intro P / intro ¬P = move assumptions into context  
 
 		
 		No branching yet; 		
