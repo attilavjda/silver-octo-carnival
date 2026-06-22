@@ -1,11 +1,12 @@
-*reference: copy paste from Aristotle AI Harmonic and ChatGPT and edited / curated by Attila Vajda*
+			
+◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻
+*reference: copy paste from ChatGPT / Aristotle by Harmonic and edited, curated by Attila Vajda.*
+not verified, non-machine checked, and maybe depends on basic axioms
+◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻
 >
 >
 >
->>
 >
->
->>
 >
 >
 >
@@ -1018,7 +1019,12 @@ simp has no canonical normal form.
 		termination properties of 
 		the selected `@[simp]` rules.
 
-
+>
+>
+>
+>
+>
+>
 
 
 
@@ -1051,7 +1057,12 @@ simp has no canonical normal form.
 	not an absolute canonical one.
 
 
-
+>
+>
+>
+>
+>
+>
 
 
 
@@ -1091,7 +1102,12 @@ and simp +contextual can even assume P (resp. ¬P) while simplifying Q (resp. R)
 	
 		— another independent reason @[simp] belongs on _and.
 
-
+>
+>
+>
+>
+>
+>
 
 
 
@@ -1106,7 +1122,11 @@ then tries to make progress on whatever it produced.
 
 
 
-
+>
+>
+>
+>
+>
 
 
 
@@ -1143,7 +1163,11 @@ What you've rediscovered is the positive/negative
 
 
 
-
+>
+>
+>
+>
+>
 
 
 
@@ -1201,7 +1225,11 @@ What you've rediscovered is the positive/negative
 							is right.
 
 
-
+.
+.
+.
+.
+.
 
 
 
@@ -1215,7 +1243,10 @@ What you've rediscovered is the positive/negative
 The key idea is:  
 simp has a built-in bias toward   
 “decomposable structure in goal position.  " "
-
+.
+.
+.
+.
 
 
 .
@@ -1249,6 +1280,10 @@ product-of-implications fits simp
 
 
 .
+.
+.
+.
+.
 
 
 
@@ -1276,7 +1311,10 @@ product-of-implications fits simp
 .
 
 
-
+.
+.
+.
+.
 
 
 
@@ -1310,14 +1348,13 @@ product-of-implications fits simp
 						
 
 
-
-
-
-
-
-
-					
-	
+.
+.
+.
+.
+.
+.
+.
 
 
 
