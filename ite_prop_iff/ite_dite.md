@@ -1,6 +1,8 @@
 			
 ◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻
-*reference: copy paste from ChatGPT / Aristotle by Harmonic and edited, curated by Attila Vajda.*
+*reference: copy pasted from collaboration with computer agents ChatGPT / Aristotle Harmonic,
+and edited, curated by Attila Vajda.*
+
 not verified, non-machine checked, and maybe depends on basic axioms
 ◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻◇◻
 >
